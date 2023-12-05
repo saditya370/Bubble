@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # devise_for :users
+
   Rails.application.routes.draw do
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
@@ -15,4 +15,8 @@ end
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "inventory_products", to: "inventory#index"
+  get "all_products", to: "product#index"
+  post "create_products",to: "product#create"
+  delete "delete_product", to: "product#destroy"
 end
